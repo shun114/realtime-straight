@@ -1,0 +1,23 @@
+USE_PLUGIN    = y
+USE_CONSOLE   = y
+USE_GUI       = n
+USE_MOTIF     = n
+MOTIF_STATIC  = n
+
+TOP           = /usr
+
+USRCFLAGS     = -I.. -I../../straightLib
+
+PROGS         = frameSynth frameSynthTandem frameAna frameAnaTandem
+
+CPU	      = linux
+
+DEST          = /usr/bin
+
+SPLIBDIRNAME  = lib/x86_64-linux-gnu
+
+#USRLIBS       = $(TOP)/$(SPLIBDIRNAME)/libstraightLibEx.$(CPU).a $(TOP)/$(SPLIBDIRNAME)/libstraightLib.$(CPU).a $(TOP)/$(SPLIBDIRNAME)/libstraight.$(CPU).a
+USRLIBS       = $(TOP)/$(SPLIBDIRNAME)/libstraightLibEx.$(ARCH).a $(TOP)/$(SPLIBDIRNAME)/libstraightLib.$(ARCH).a $(TOP)/$(SPLIBDIRNAME)/libstraight.$(ARCH).a
+
+include $(TOP)/$(SPLIBDIRNAME)/sp/prog.rules
+
